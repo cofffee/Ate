@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Automatic">
+    <entity name="Food" representedClassName="Food" syncable="YES">
+        <attribute name="food_calories" attributeType="String" syncable="YES"/>
+        <attribute name="food_carbohydrate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="food_fat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="food_name" attributeType="String" syncable="YES"/>
+        <attribute name="food_protein" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="food_sugar" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="food_water" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="foods_list" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Food_List" inverseName="foods" inverseEntity="Food_List" syncable="YES"/>
+        <relationship name="users" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="foods" inverseEntity="Users" syncable="YES"/>
+    </entity>
+    <entity name="Food_List" representedClassName="Food_List" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="foods" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Food" inverseName="foods_list" inverseEntity="Food" syncable="YES"/>
+        <relationship name="users" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="food_list" inverseEntity="Users" syncable="YES"/>
+    </entity>
+    <entity name="Users" representedClassName="Users" syncable="YES">
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="food_list" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Food_List" inverseName="users" inverseEntity="Food_List" syncable="YES"/>
+        <relationship name="foods" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Food" inverseName="users" inverseEntity="Food" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Food" positionX="-81" positionY="81" width="128" height="193"/>
+        <element name="Food_List" positionX="-459" positionY="198" width="128" height="88"/>
+        <element name="Users" positionX="-308" positionY="344" width="128" height="118"/>
+    </elements>
+</model>

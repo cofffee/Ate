@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>9Q0ppMjSK0J5ljVCwCQjU22sK6ppyKiHfZxA1PmS</string>
+	<key>Food Nutrient IDs</key>
+	<dict>
+		<key>Calories</key>
+		<string>208</string>
+		<key>Carbohydrates</key>
+		<string>205</string>
+		<key>Protein</key>
+		<string>203</string>
+		<key>Fats</key>
+		<string>204</string>
+		<key>Sugars</key>
+		<string></string>
+		<key>Water</key>
+		<string>255</string>
+	</dict>
+	<key>Food Search URL</key>
+	<string>http://api.nal.usda.gov/ndb/search/?</string>
+	<key>Nutrient Search URL</key>
+	<string>http://api.nal.usda.gov/ndb/nutrients/?</string>
+</dict>
+</plist>
