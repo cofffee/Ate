@@ -113,6 +113,7 @@ int count = 0;
 //Set up height of rows
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 200.0;
+    NSSet
 }
 
 -(void)showTitleViewAnimation {

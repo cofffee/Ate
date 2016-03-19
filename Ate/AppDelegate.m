@@ -46,38 +46,38 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     //Load log in view if not logged in
-    if (!loggedIn) {
-        UIViewController *pv = [storyboard instantiateViewControllerWithIdentifier:@"premain"];
-        self.window.rootViewController = pv;
-        [self.window makeKeyAndVisible];
-    }
-    //load front of the app if logged in
-    else {
+//    if (!loggedIn) {
+//        UIViewController *pv = [storyboard instantiateViewControllerWithIdentifier:@"premain"];
+//        self.window.rootViewController = pv;
+//        [self.window makeKeyAndVisible];
+//    }
+//    //load front of the app if logged in
+//    else {
         //Set up first view
-        ViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"mainview"];
-        vc.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemBookmarks tag:0];
-        UINavigationController *vcNavCtrl = [[UINavigationController alloc] initWithRootViewController:vc];
-        
-        //Then second (weeks) view
-        WeekViewController *wvc = [storyboard instantiateViewControllerWithIdentifier:@"weekview"];
-        wvc.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemContacts tag:0];
-        UINavigationController *wvcNavCtrl = [[UINavigationController alloc] initWithRootViewController:wvc];
-        
-        //Then months view
-        MonthViewController *mvc = [storyboard instantiateViewControllerWithIdentifier:@"monthview"];
-        mvc.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemDownloads tag:0];
-        UINavigationController *mvcNavCtrl = [[UINavigationController alloc] initWithRootViewController:mvc];
-        
-        // determine the initial view controller here and instantiate it with [storyboard instantiateViewControllerWithIdentifier:<storyboard id>];
+    ViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"mainview"];
+    vc.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemBookmarks tag:0];
+    UINavigationController *vcNavCtrl = [[UINavigationController alloc] initWithRootViewController:vc];
+    
+    //Then second (weeks) view
+    WeekViewController *wvc = [storyboard instantiateViewControllerWithIdentifier:@"weekview"];
+    wvc.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemContacts tag:0];
+    UINavigationController *wvcNavCtrl = [[UINavigationController alloc] initWithRootViewController:wvc];
+    
+    //Then months view
+    MonthViewController *mvc = [storyboard instantiateViewControllerWithIdentifier:@"monthview"];
+    mvc.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemDownloads tag:0];
+    UINavigationController *mvcNavCtrl = [[UINavigationController alloc] initWithRootViewController:mvc];
+    
+    // determine the initial view controller here and instantiate it with [storyboard instantiateViewControllerWithIdentifier:<storyboard id>];
 
-        //Set up tab controller
-        UITabBarController *tabCtrl = [[UITabBarController alloc] init];
-        self.window.rootViewController = tabCtrl;
-        tabCtrl.viewControllers = @[vcNavCtrl, wvcNavCtrl, mvcNavCtrl];
-        
-        //Show the window
-        [self.window makeKeyAndVisible];
-    }
+    //Set up tab controller
+    UITabBarController *tabCtrl = [[UITabBarController alloc] init];
+    self.window.rootViewController = tabCtrl;
+    tabCtrl.viewControllers = @[vcNavCtrl, wvcNavCtrl, mvcNavCtrl];
+    
+    //Show the window
+    [self.window makeKeyAndVisible];
+//    }
 //    [self presentViewController:navCtrl animated:YES completion:nil];
 
     
